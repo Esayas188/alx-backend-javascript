@@ -1,5 +1,4 @@
-export function getFullResponseFromAPI(success) {
-  // Make a promise based on the success parameter
+export default function getFullResponseFromAPI(success) {
   return new Promise((resolve, reject) => {
     if (success) {
       resolve({

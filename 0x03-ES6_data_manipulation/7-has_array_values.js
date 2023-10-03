@@ -1,9 +1,3 @@
-export default function hasValueFormArray(set, list) {
-  let response = true;
-  list.map((obj) => {
-    if (!set.has(obj)) {
-      response = false;
-    }
-  });
-  return response;
-}
+const hasValuesFromArray = (set, array) => array.every((value) => set.has(value));
+
+export default hasValuesFromArray;

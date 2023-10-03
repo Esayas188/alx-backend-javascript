@@ -1,10 +1,13 @@
-/* eslint-disable array-callback-return */
-export default function cleanSet(set, string) {
-  if (string === undefined || string.length === 0) {
-    return "";
-  }
-  return [...set]
-    .filter((str) => (str !== undefined ? str.startsWith(string) : ""))
-    .map((str) => (str !== undefined ? str.slice(string.length) : ""))
-    .join("-");
-}
+const cleanSet = (set, startString) => {
+  const strings = [];
+
+  if (startString === '' || typeof startString !== 'string') return '';
+  set.forEach((s) => {
+    if (typeof s === 'string' && s.startsWith(startString)) {
+      strings.push(s.slice(startString.length));
+    }
+  });
+  return strings.join('-');
+};
+
+export default cleanSet;
